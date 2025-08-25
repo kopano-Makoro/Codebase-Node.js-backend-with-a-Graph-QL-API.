@@ -1,2 +1,4 @@
-# Codebase-Node.js-backend-with-a-Graph-QL-API.
-GraphQL
+The application is a full-stack travel planning app with a GraphQL backend and a single-page frontend, designed to provide dynamic city suggestions, weather forecasts, and activity rankings based on weather conditions. It leverages Open-Meteo’s free APIs for geocoding and weather data and is deployed on Google Cloud Run for scalability.
+
+The current architecture balances simplicity, scalability, and functionality, leveraging GraphQL’s flexibility, Open-Meteo’s free APIs, and Cloud Run’s serverless hosting. Omissions like authentication and persistent caching were made to prioritize core features, but they’re addressable with straightforward extensions. With more time, adding authentication, caching, subscriptions, and advanced features (e.g., ML-based rankings or travel itineraries) would make the app more robust and feature-rich.
+
