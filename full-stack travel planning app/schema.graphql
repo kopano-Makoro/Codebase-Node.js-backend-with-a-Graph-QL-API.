@@ -1,0 +1,39 @@
+type Query {
+  citySuggestions(name: String!): [City]
+  weatherForecast(latitude: Float!, longitude: Float!, timezone: String = "auto", days: Int = 7): Forecast
+  activityRankings(latitude: Float!, longitude: Float!, timezone: String = "auto", date: String): [ActivityRanking]
+}
+
+type City {
+  id: ID!
+  name: String
+  latitude: Float
+  longitude: Float
+  country: String
+}
+
+type Forecast {
+  daily: [DailyWeather]
+  units: ForecastUnits
+}
+
+type DailyWeather {
+  date: String
+  tempMax: Float
+  tempMin: Float
+  weatherCode: Int
+  precipitation: Float
+  windSpeed: Float
+}
+
+type ForecastUnits {
+  temp: String
+  precipitation: String
+  windSpeed: String
+}
+
+type ActivityRanking {
+  activity: String
+  score: Float
+  reason: String
+}
