@@ -73,15 +73,15 @@ const updateUI = ({ city, weatherForecast, activityRankings }) => {
     </div>
   `;
 
-  // Update icon (map WMO codes to your existing icons)
+
   const iconSrc = `img/icons/${wmoIcons[weatherForecast.daily[0].weatherCode] || '01'}.svg`;
   icon.setAttribute('src', iconSrc);
 
-  // Update time image (approximate day/night based on time)
+  
   const isDay = new Date().getHours() < 18;
   time.setAttribute('src', isDay ? 'img/day.svg' : 'img/night.svg');
 
-  // Update forecast
+ 
   forecast.innerHTML = `
     <h6>7-Day Forecast</h6>
     <ul class="list-group">
@@ -95,7 +95,7 @@ const updateUI = ({ city, weatherForecast, activityRankings }) => {
     </ul>
   `;
 
-  // Update activities
+ 
   activities.innerHTML = `
     <h6>Activity Rankings</h6>
     <ul class="list-group">
@@ -187,4 +187,5 @@ cityForm.addEventListener('submit', e => {
 if (localStorage.getItem('location')) {
   const { latitude, longitude, cityName, country } = JSON.parse(localStorage.getItem('location'));
   updateCity(latitude, longitude, 'auto', dateInput.value, cityName, country);
+
 }
